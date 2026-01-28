@@ -1,6 +1,8 @@
 # Slack Content Bot
 
-A smart Slack bot that monitors your team's conversations and automatically suggests high-quality LinkedIn and X/Twitter posts based on content-worthy moments.
+A smart Slack bot that monitors your team's conversations and automatically suggests high-quality LinkedIn and X/Twitter posts based on content-worthy moments. Powered by Google Gemini.
+
+![Slack Content Bot Screenshot](screenshot.png)
 
 ## Features
 
