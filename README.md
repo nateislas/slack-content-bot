@@ -139,10 +139,9 @@ The bot looks for:
 
 The easiest way to deploy is using [Railway](https://railway.app).
 
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/new?template=https%3A%2F%2Fgithub.com%2Frailwayapp-templates%2Fslack-bolt-ts&envs=SLACK_BOT_TOKEN%2CSLACK_APP_TOKEN%2CSLACK_SIGNING_SECRET%2CSLACK_WORKSPACE_DOMAIN%2CWATCH_CHANNEL_IDS%2CCONTENT_IDEAS_CHANNEL_ID%2CLLM_PROVIDER%2CGOOGLE_API_KEY&optionalEnvs=LLM_MODEL%2CTEMPERATURE%2COPENAI_API_KEY%2CANTHROPIC_API_KEY)
-
 1.  **Fork/Clone** this repo to your GitHub.
 2.  **New Project** on Railway → "Deploy from GitHub repo".
+3.  **Select** your `slack-content-bot` repository.
 3.  **Variables**: Add the following Environment Variables in Railway:
     *   `SLACK_BOT_TOKEN`
     *   `SLACK_APP_TOKEN`
