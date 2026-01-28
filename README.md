@@ -1,25 +1,25 @@
 # Slack Content Bot
 
-A smart Slack bot that monitors your team's conversations and automatically suggests high-quality LinkedIn and X/Twitter posts based on content-worthy moments. Powered by Google Gemini.
+A 100% self-hostable Slack bot that monitors your team's conversations and automatically suggests high-quality LinkedIn and X/Twitter posts based on content-worthy moments.
 
 ![Slack Content Bot Screenshot](screenshot.png)
 
 ## Features
 
-### 🧠 Intelligent Detection
+### Intelligent Detection
 *   **Context-Aware**: Analyzes full conversations, not just single messages.
 *   **Thread Support**: Treats threads as distinct conversations, ensuring side-discussions aren't missed.
 *   **Quality Thresholds**: Only alerts you for "Medium" or "High" quality content (configurable).
 
-### ✍️ Draft Generation
+### Draft Generation
 *   **Platform Native**: Generates separate drafts optimized for LinkedIn (professional, story-driven) and X/Twitter (punchy, thread-ready).
 *   **Source Linking**: Includes direct links back to the original Slack conversation for context.
 
-### 🔄 Active Learning Feedback Loop
+### Active Learning Feedback Loop
 *   **Dismiss with Feedback**: Don't just delete bad suggestions—tell the bot *why*.
 *   **Adaptive Prompts**: The bot learns from your feedback (e.g., "Too robotic", "Don't use emojis") and avoids those patterns in future generations.
 
-### 🛠️ Configurable
+### Configurable
 *   **Quality Filter**: Set `MIN_STRENGTH_TO_POST` to `low`, `medium`, or `high`.
 *   **Creativity**: Tune the AI `TEMPERATURE` for more safe or more creative outputs.
 
@@ -58,9 +58,17 @@ oauth_config:
 3.  **Signing Secret**: Basic Information page.
 
 ### 3. Get Channel IDs
-Right-click a channel → View channel details → Copy Channel ID (e.g., `C0123456789`).
-*   **Watch Channels**: The channels where your team talks (e.g., `#random`, `#product`).
-*   **Ideas Channel**: The channel where the bot posts suggestions (e.g., `#content-ideas`).
+
+To find a Channel ID:
+1. Right-click the channel name in your Slack sidebar.
+2. Select **View channel details**.
+3. Scroll to the bottom of the **About** tab.
+4. Copy the **Channel ID** (starts with `C`).
+
+*   **Watch Channels**: The existing channels where your team has meaningful discussions (e.g., #product, #engineering, #general). You can watch multiple channels by comma-separating them.
+*   **Ideas Channel**: **Create a new private channel** (e.g., #content-ideas) and invite the bot there. This is where the drafts will be posted for your review.
+
+**Note**: Don't forget to `/invite @Content Bot` into every channel you want it to watch!
 
 ### 4. Install & Configure
 Clone the repo and set up your environment:
@@ -122,9 +130,9 @@ npm start
     *   The bot waits for a "pause" in conversation (default: 5 mins) or for a thread to go quiet.
     *   If a chunk of conversation is strong enough, it posts to `#content-ideas`.
 3.  **Review Suggestion**:
-    *   **Edit**: Click ✏️ to tweak the draft in a modal before copying.
-    *   **Dismiss**: Click ❌ to just delete it.
-    *   **Dismiss with Feedback**: Click 👎 to tell the bot *why* (e.g., "Hallucinated", "Boring"). It will learn from this!
+    *   **Edit**: Click Edit to tweak the draft in a modal before copying.
+    *   **Dismiss**: Click Dismiss to just delete it.
+    *   **Dismiss with Feedback**: Click Dismiss with Feedback to tell the bot *why* (e.g., "Hallucinated", "Boring"). It will learn from this!
 
 ### How Detection Works
 The bot looks for:
@@ -137,7 +145,14 @@ The bot looks for:
 *   **Writing Style**: Edit `prompts/writing-rules.txt` to change the tone of drafts.
 *   **Detection Criteria**: Edit `prompts/detect-content.txt` to change what the bot looks for.
 
-## 🚀 Deployment (Railway)
+## Privacy & Self-Hosting
+
+This bot is 100% self-hostable and designed with privacy in mind:
+- **Socket Mode**: Uses Slack's Socket Mode, which means the bot establishes an outbound connection to Slack. You do NOT need a public IP, a domain, or to open any firewall ports.
+- **Local Data**: All conversation buffering happens in-memory on your server. Feedback history is stored in a local JSON file.
+- **Provider Choice**: You choose your LLM provider. No data is sent to any third party—it goes only to the specific AI provider you configure.
+
+## Deployment (Railway)
 
 The easiest way to deploy is using [Railway](https://railway.app).
 
