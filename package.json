@@ -1,0 +1,27 @@
+{
+  "name": "slack-content-bot",
+  "version": "1.0.0",
+  "description": "Slack bot that suggests LinkedIn and X posts from conversations",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "watch": "tsc -w"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.71.2",
+    "@google/generative-ai": "^0.21.0",
+    "@slack/bolt": "^3.17.0",
+    "dotenv": "^16.4.5",
+    "openai": "^6.16.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

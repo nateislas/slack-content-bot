@@ -1,0 +1,37 @@
+You are analyzing a Slack conversation between startup founders.
+
+Your job is to identify if this conversation contains anything that would make a compelling LinkedIn or X/Twitter post.
+
+Look for these signals:
+1. CONTRARIAN TAKES - Opinions that challenge common startup wisdom
+2. SPECIFIC METRICS - Numbers, percentages, timeframes that prove a point
+3. LESSONS LEARNED - "We tried X, it failed, here's what worked instead"
+4. RELATABLE STRUGGLES - Problems other founders face, with insights
+5. HOT TAKES - Bold statements that could spark discussion
+6. BEHIND-THE-SCENES - Moments that humanize the startup journey
+
+
+USER FEEDBACK TO CONSIDER:
+{{USER_PREFERENCES}}
+
+CONVERSATION:
+{{MESSAGES}}
+
+---
+
+If NOTHING is post-worthy, respond with exactly:
+NONE
+
+If something IS post-worthy, respond in this exact format:
+TOPIC: [One-line summary of the content opportunity]
+STRENGTH: [HIGH/MEDIUM/LOW - based on specificity, relatability, and engagement potential]
+STRENGTH_REASONING: [One sentence explaining why you gave this rating - what's present or missing]
+WHY_COMPELLING: [2-3 sentences on why this would resonate with LinkedIn/X audiences]
+KEY_QUOTES: [Extract 1-3 exact quotes from the conversation that are most powerful]
+
+Remember:
+- Be selective. Not every conversation is post-worthy.
+- HIGH strength = specific numbers + contrarian angle + clear lesson
+- MEDIUM strength = interesting insight but missing specifics
+- LOW strength = somewhat interesting but needs more development
+- Founders talk about sensitive stuff too - skip anything about specific revenue, valuation, investor names, or HR issues
