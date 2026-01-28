@@ -159,7 +159,7 @@ The easiest way to deploy is using [Railway](https://railway.app).
 1.  **Fork/Clone** this repo to your GitHub.
 2.  **New Project** on Railway → "Deploy from GitHub repo".
 3.  **Select** your `slack-content-bot` repository.
-3.  **Variables**: Add the following Environment Variables in Railway:
+4.  **Variables**: Add the following Environment Variables in Railway:
     *   `SLACK_BOT_TOKEN`
     *   `SLACK_APP_TOKEN`
     *   `SLACK_SIGNING_SECRET`
@@ -168,6 +168,6 @@ The easiest way to deploy is using [Railway](https://railway.app).
     *   `CONTENT_IDEAS_CHANNEL_ID`
     *   `LLM_PROVIDER` (e.g., `google`)
     *   `GOOGLE_API_KEY` (or `OPENAI_API_KEY` / `ANTHROPIC_API_KEY`)
-4.  **Deploy**: Railway will automatically detect `npm run build` and `npm start`.
+5.  **Deploy**: Railway will automatically detect `npm run build` and `npm start`.
 
 *Note: Since this bot uses Socket Mode, you do NOT need a public domain or webhook configuration! It just works.*
